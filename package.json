@@ -1,0 +1,25 @@
+{
+  "name": "cliplogger",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "yarn@1.22.22",
+  "scripts": {
+    "dev": "node app/server.js",
+    "start": "node app/server.js",
+    "stop": "node -e \"fetch('http://127.0.0.1:'+ (process.env.PORT||54545) +'//__shutdown',{method:'POST'})\"",
+    "build:exe": "pkg app/server.js --targets node18-win-x64 --output launcher/tools/server.exe"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "pkg": "^5.8.1"
+  },
+  "pkg": {
+    "assets": [],
+    "targets": ["node18-win-x64"]
+  }
+}

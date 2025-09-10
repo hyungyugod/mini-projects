@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "ClipLogger",
+  "version": "0.2.0",
+  "description": "Save selected text with URL to a local log file.",
+  "permissions": ["contextMenus", "notifications"],
+  "host_permissions": ["http://127.0.0.1:54545/*", "http://localhost:54545/*"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+}
